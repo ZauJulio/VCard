@@ -1,0 +1,78 @@
+@import "../../styles/vars.scss";
+
+.candidates {
+  @include flex-box();
+  @include max-size-vp();
+
+  .main {
+    @include flex-box();
+
+    flex-wrap: wrap;
+    z-index: 1000;
+
+    .left_container {
+      @include flex-box($direction: column, $align-items: flex-start);
+      z-index: 1000;
+
+      @media screen and (max-width: $bp-m) {
+        @include flex-box($direction: column, $align-items: center);
+        padding-bottom: 5rem;
+      }
+
+      .back_button {
+        width: 4rem;
+      }
+    }
+
+    form {
+      @include flex-box($align-items: flex-end);
+      gap: 2rem;
+
+      @media screen and (max-width: $bp-m) {
+        flex-wrap: wrap-reverse;
+      }
+
+      .selector_field {
+        @include flex-box($direction: column);
+        gap: 0.5rem;
+
+        label {
+          @include max-size-percent();
+          padding-left: 1.5rem;
+
+          font: normal 1.3rem "Meta Pro Regular", sans-serif;
+          letter-spacing: -0.11px;
+          text-align: left;
+          color: $blue;
+        }
+
+        .select {
+          width: 34rem;
+          height: 4rem;
+
+          @media screen and (max-width: $bp-m) {
+            width: 80vw;
+          }
+        }
+      }
+
+      .submit_button {
+        @media screen and (max-width: $bp-m) {
+          align-self: flex-start;
+        }
+
+        height: 4rem;
+        width: 15rem;
+        background: $orange;
+        color: white;
+        font-size: 1.4rem;
+        border-radius: 26px;
+
+        &:disabled {
+          color: white;
+          background: #aaaaaa;
+        }
+      }
+    }
+  }
+}

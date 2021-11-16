@@ -1,0 +1,34 @@
+@import "../../styles/vars.scss";
+
+.field {
+  @include flex-box($direction: column, $align-items: flex-start);
+  @include max-size-percent();
+  gap: 0.25rem;
+
+  .labelText {
+    @include max-size-percent();
+    
+    text-align: left;
+    font: normal 1rem "Meta Pro Regular", sans-serif;
+    letter-spacing: -0.11px;
+    color: $blue;
+  }
+
+  .input {
+    @include max-size-percent();
+
+    background: $light-background 0% 0% no-repeat padding-box;
+    box-shadow: inset 0px 0px 9px #00000005, 0px 0px 15px #0000000d;
+    border: 3px solid white;
+    border-radius: 23px;
+    height: 3.4rem;
+
+    padding-left: 1rem;
+    font: normal 1rem "Meta Pro Regular", sans-serif;
+    color: #2A3237;
+
+    &:focus {
+      outline: $cyan solid 3px;
+    }
+  }
+}

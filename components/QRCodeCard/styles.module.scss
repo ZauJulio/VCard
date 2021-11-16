@@ -1,0 +1,70 @@
+@import "../../styles/vars.scss";
+
+.qrcode_container {
+  @include flex-box($direction: column, $justify-content: flex-start);
+  @include max-size-percent();
+  position: relative;
+  z-index: 1000;
+
+  background: $light-background 0% 0% no-repeat padding-box;
+  box-shadow: inset 0px 0px 9px #00000005, 0px 0px 15px #0000000d;
+  border: 3px solid white;
+  border-radius: 68px;
+
+  .header {
+    @include flex-box(
+      $justify-content: space-between,
+      $align-items: flex-start
+    );
+    padding: 3.5rem 4rem 4rem 3.5rem;
+    width: 100%;
+
+    .user_data {
+      color: $blue;
+      font: 1.2rem "Meta Pro Regular", sans-serif;
+      letter-spacing: -0.9px;
+      line-height: 2.8rem;
+
+      h1,
+      h2 {
+        margin: 0;
+      }
+
+      h2 {
+        font: 2rem "Meta Pro Cond Italic", sans-serif;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px $blue;
+      }
+    }
+
+    .icon_commcepta {
+      width: 14%;
+      height: auto;
+
+      padding-top: 1rem;
+    }
+  }
+
+  .qr_code {
+    image-rendering: pixelated;
+    width: 62%;
+    height: auto;
+  }
+
+  .logo_container {
+    @include flex-box();
+    height: 100%;
+  }
+
+  .left_scratchs_card {
+    position: absolute;
+    bottom: -10px;
+    left: -5px;
+  }
+
+  .right_scratchs_card {
+    position: absolute;
+    bottom: -10px;
+    right: -5px;
+  }
+}

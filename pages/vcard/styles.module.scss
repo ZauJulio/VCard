@@ -1,0 +1,36 @@
+@import "../../styles/vars.scss";
+
+.vcard {
+  @include flex-box();
+  @include max-size-vp();
+
+  background: $white;
+
+  .main {
+    @include flex-box($align-items: flex-end);
+    gap: 2rem;
+    padding-top: 4rem;
+    margin-left: -4rem;
+    z-index: 1000;
+
+    @media screen and (max-width: $bp-m) {
+      flex-wrap: wrap-reverse;
+      margin-left: 0;
+    }
+
+    .qrcode_card {
+      height: 75vh;
+      min-height: 40rem;
+
+      width: 33rem;
+
+      @media screen and (max-width: $bp-m) {
+        width: 80vw;
+      }
+    }
+
+    .back_button {
+      width: 4rem;
+    }
+  }
+}

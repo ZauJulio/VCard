@@ -1,0 +1,70 @@
+@import "../../styles/vars.scss";
+
+@keyframes slide-up {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 500% 100%;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    background-position: 500% 100%;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.tittle {
+  @include flex-box($direction: column, $align-items: flex-start);
+  position: relative;
+  z-index: 1000;
+  
+  cursor: pointer;
+  margin-top: 5rem;
+  width: 25rem;
+  height: 17rem;
+
+  @media screen and (max-width: $bp-m) {
+    width: 20rem;
+  }
+
+  h1,
+  h2 {
+    position: absolute;
+    height: min-content;
+    
+    width: 100%;
+    margin: 0;
+    
+    font: normal bold 6rem "Meta Pro Cond Regular", sans-serif;
+    letter-spacing: -2.6px;
+  }
+
+  h1 {
+    top: 0;
+  }
+  
+  h2 {
+    bottom: 0;
+    width: 100%;
+    position: relative;
+
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    background-size: 500% 500%;
+    background-position: 0 0;
+
+    animation: slide-down 0.4s ease-in-out forwards;
+  }
+
+  &:hover {
+    h2 {
+      animation: slide-up 0.4s ease-in-out forwards;
+    }
+  }
+}

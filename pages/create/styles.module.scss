@@ -1,0 +1,57 @@
+@import "../../styles/vars.scss";
+
+.create {
+  @include max-size-vp();
+  background: $white;
+
+  .main {
+    @include flex-box();
+    @include max-size-percent();
+    flex-wrap: wrap;
+
+    @media screen and (max-width: $bp-m) {
+      @include flex-box($justify-content: flex-start);
+      padding-bottom: 5rem;
+    }
+
+    .left_container {
+      @include flex-box($direction: column, $align-items: flex-start);
+
+      @media screen and (max-width: $bp-m) {
+        padding: 0 4rem;
+        width: 100%;
+      }
+
+      .back_button {
+        z-index: 1000;
+        width: 4rem;
+      }
+    }
+
+    .form {
+      @include flex-box($direction: column, $justify-content: flex-start);
+      z-index: 1000;
+      width: 45rem;
+      gap: 1rem;
+
+      .form_group {
+        @include flex-box($justify-content: flex-start);
+        @include max-size-percent();
+        padding: 0 2rem;
+        gap: 2rem;
+
+        .submit_button {
+          background: $orange;
+          color: white;
+          height: 3.4rem;
+          width: 10rem;
+          z-index: 1000;
+        }
+      }
+
+      .form_group + .form_group {
+        margin-top: 1.4rem;
+      }
+    }
+  }
+}

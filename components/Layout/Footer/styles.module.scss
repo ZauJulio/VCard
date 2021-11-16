@@ -1,0 +1,17 @@
+@import "../../../styles/vars.scss";
+
+.footer {
+  @include flex-box($justify-content: flex-start);
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  width: 100vw;
+  padding-left: 2rem;
+
+  p {
+    text-align: left;
+    font-family: "Meta Pro Cond Regular", sans-serif;
+    letter-spacing: -0.27px;
+    font-size: 1rem;
+  }
+}

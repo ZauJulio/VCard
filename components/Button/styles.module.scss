@@ -1,0 +1,18 @@
+@import "../../styles/vars.scss";
+
+.button {
+  @include max-size-percent();
+  border: none;
+
+  background: $cyan;
+  border-radius: 16px;
+
+  cursor: pointer !important;
+  transition: all 0.2s ease-in-out;
+  font: normal 1rem "Meta Pro Cond Regular", sans-serif;
+
+  &:hover:enabled,
+  &:focus:enabled {
+    border: 2px solid $cyan;
+  }
+}

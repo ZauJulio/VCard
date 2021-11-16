@@ -1,0 +1,45 @@
+@import "../../styles/vars.scss";
+
+.home_container {
+  @include flex-box();
+  @include max-size-vp();
+
+  background: $background;
+
+  .main {
+    @include flex-box();
+    flex-wrap: wrap;
+    z-index: 100;
+    
+    .buttons_container {
+      @include flex-box();
+      flex-wrap: wrap;
+      gap: 2rem;
+
+      .button {
+        @include flex-box();
+        gap: 0.5rem;
+        width: 22rem;
+        height: 5rem;
+        padding-top: 0.3rem;
+
+        font: bold 1.5rem "Meta Pro Cond Regular", sans-serif;
+        color: white;
+
+        &:hover {
+          background: #31ade0;
+        }
+
+        .icon_face {
+          top: 0.1rem;
+          width: 2rem;
+        }
+
+        .icon_vcard {
+          top: 0.2rem;
+          width: 1.5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import "../../../styles/vars.scss";
+
+.header_container {
+  @include flex-box($justify-content: flex-start);
+  position: absolute;
+  z-index: 10;
+
+  height: 5rem;
+  width: 100vw;
+  top: 0;
+
+  background: $blue;
+  padding-left: 2rem;
+
+  .logo {
+    cursor: pointer;
+    filter: brightness(0.8);
+    filter: contrast(1.2);
+  }
+}
